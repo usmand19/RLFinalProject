@@ -8,8 +8,8 @@ Maximize score: test each possible legal move, creating list of score after
 """
 
 import random
-from mancala.game import Game
-from .agent import Agent
+from game import Game
+from baseagent import Agent
 
 
 class AgentMax(Agent):
