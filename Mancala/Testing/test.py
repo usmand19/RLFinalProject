@@ -1,20 +1,21 @@
 from env import MancalaEnv
 from game import Game
 from randomagent import AgentRandom
-
+from exactagent import AgentExact
 import numpy as np
 
+
 game = Game()
-random_agent = AgentRandom()
-random_agent2 = AgentRandom()
-
-testarr = np.zeros(shape = (1,2))
-
-testarr = np.append(testarr, [[1,3]], axis = 0)
-testarr = np.append(testarr, [[2,4]], axis = 0)
-print(testarr)
-
+print(game._player_one)
+game.move(0)
+print(game._player_one)
+print(game.board())
 '''
+random_agent = AgentRandom()
+random_agent2 = AgentExact()
+action = random_agent2._move(game)
+print(action)
+
 print(game.board())
 game._player_one = True
 move = random_agent.move(game)

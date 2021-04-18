@@ -40,7 +40,8 @@ class AgentMax(Agent):
                     game_clone.clone()
                 ),
                 move_options))
-
+        if (not move_options):
+            return(random.choice([7,8,9,10,11,12]))
         score_max = max(available_scores)
         final_options = [move for score, move in
                          zip(available_scores, move_options)

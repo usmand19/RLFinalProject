@@ -56,11 +56,18 @@ class AgentExact(Agent):
                                     ),
                                     move_options))
 
+        if (not move_options):
+            return(random.choice([7,8,9,10,11,12]))
+
         final_options = [move for exact, move in
                          zip(distance, move_options)
                          if exact == 1]
 
+
+
+        
 #        if not final_options:
+        
         if (not final_options) and available_scores:
             score_max = max(available_scores)
             final_options = [move for score, move in
@@ -69,7 +76,7 @@ class AgentExact(Agent):
             final_move = Game.rotate_board(rot_flag, random.choice(final_options))
         ## Added
         elif (not available_scores):
-             final_move = Game.rotate_board(rot_flag, random.choice(move_options))
+            final_move = Game.rotate_board(rot_flag, random.choice(move_options))
         else:
             final_move = Game.rotate_board(rot_flag, max(final_options))
 
