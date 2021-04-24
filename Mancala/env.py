@@ -4,12 +4,14 @@ import gym
 from gym import spaces
 from gym.utils import seeding
 
-'''
-from .game import Game
-from .agents.random import AgentRandom
-from .agents.exact import AgentExact
-from .agents.max_min import AgentMinMax
-'''
+from game import Game
+from randomagent import AgentRandom
+from randomagent import AgentRandom
+from exactagent import AgentExact
+from max_min import AgentMinMax
+
+
+
 
 class MancalaEnv(gym.Env):
     """Mancala Game Environment"""

@@ -8,8 +8,8 @@ Max-Min Agent
 
 import random
 import sys
-from mancala.game import Game
-from .agent import Agent
+from game import Game
+from baseagent import Agent
 
 
 class AgentMinMax(Agent):
@@ -48,13 +48,15 @@ class AgentMinMax(Agent):
                     sys.maxsize
                 ),
                 move_options))
+        if available_scores:
+            score_max = max(available_scores)
+            final_options = [move for score, move in
+                            zip(available_scores, move_options)
+                            if score == score_max]
 
-        score_max = max(available_scores)
-        final_options = [move for score, move in
-                         zip(available_scores, move_options)
-                         if score == score_max]
-
-        final_move = Game.rotate_board(rot_flag, random.choice(final_options))
+            final_move = Game.rotate_board(rot_flag, random.choice(final_options))
+        else:
+            final_move = random.choice([7,8,9,10,11,12])
         return final_move
 
     @staticmethod
