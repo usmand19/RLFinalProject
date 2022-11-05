@@ -2,7 +2,7 @@
 Learning Mancala using Deep Q-Networks and Experience Replay.
 
 Files:
-The files fro the Mancala Project are provided in the 'Mancala' subfolder.<br/>
+The files for the Mancala Project are provided in the 'Mancala' subfolder.<br/>
 
 Files for the training and testing of the robot are provided in Jupyter notebooks ```training.ipynb``` & ```testing.ipynb``` respectively.<br/>
 
